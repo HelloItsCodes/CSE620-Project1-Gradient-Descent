@@ -27,9 +27,7 @@ MAX_ITER = 2000
 TOL = 1e-6
 DIVERGE = 1e8
 
-# ---------------------------------------------------------------------------
 # f, grad, Hessian
-# ---------------------------------------------------------------------------
 
 
 def f_quadratic(x: np.ndarray) -> float:
@@ -123,14 +121,12 @@ FUNCTIONS = {
     },
 }
 
-# 3 starts. Starts 1 and 2 are the 72 required runs; start 3 is extra.
 STARTS = {
     1: np.array([-2.0, 2.0]),
     2: np.array([0.5, -1.5]),
     3: np.array([3.0, 3.0]),
 }
 
-# assignment example LRs for GD / AdaGrad / Adam
 PARAM_GRID = {
     "quadratic": {
         "GD": [0.001, 0.01, 0.1],
@@ -151,11 +147,6 @@ PARAM_GRID = {
         "Adam": [0.001, 0.01, 0.1],
     },
 }
-
-
-# ---------------------------------------------------------------------------
-# Optimizers
-# ---------------------------------------------------------------------------
 
 
 def _finite(x: np.ndarray, val: float) -> bool:
